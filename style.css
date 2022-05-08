@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
-
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-body
-{
-    
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,24 +14,21 @@ body
     background: linear-gradient(45deg, #fbda61, #ff5acd);
 }
 
-.card
-{
+.card {
     position: relative;
     width: 350px;
-    height: 190px;
+    height: 200px;
     background: #fff;
     border-radius: 20px;
-    box-sizing: 0 35px 80px rgba(0,0,0,0.15);
+    box-sizing: 0 35px 80px rgba(0, 0, 0, 0.15);
     transition: 0.5s;
 }
 
-.card:hover
-{
-    height: 450px;
+.card:hover {
+    height: 430px;
 }
 
-.imgBx
-{
+.imgBx {
     position: absolute;
     left: 50%;
     top: -50px;
@@ -49,14 +42,12 @@ body
     transition: 0.5s;
 }
 
-.card:hover .imgBx
-{
+.card:hover .imgBx {
     width: 250px;
     height: 250px;
 }
 
-.imgBx img
-{
+.imgBx img {
     position: absolute;
     top: 0;
     left: 0;
@@ -65,77 +56,67 @@ body
     object-fit: cover;
 }
 
-.card .content
-{   
+.card .content {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 80%;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     overflow: hidden;
 }
 
-.card .content .details
-{
+.card .content .details {
     padding: 40px;
     text-align: center;
     width: 100%;
     transition: 0.5s;
     transform: translateY(150px);
-
 }
 
-.card:hover .content .details
-{
+.card:hover .content .details {
     transform: translateY(0px);
 }
-.card .content .details h2 
-{
+
+.card .content .details h2 {
     font-size: 1.25em;
     font-weight: 600;
     color: #555;
     line-height: 1.2em;
-
 }
 
-.card .content .details h2 span 
-{
+.card .content .details h2 span {
     font-size: 0.75em;
     font-weight: 500;
     opacity: 0.5;
 }
 
-.card .content .details .data
-{
+.card .content .details .data {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
 }
 
-.card .content .details .data h3
-{
+.card .content .details .data h3 {
     font-size: 1em;
     color: #555;
     line-height: 1.2em;
     font-weight: 600;
 }
 
-.card .content .details .data h3 span
-{
+.card .content .details .data h3 span {
     font-size: 0.85em;
     font-weight: 400;
     opacity: 0.5;
 }
 
-.card .content .details .actionBtn
-{
+.card .content .details .actionBtn {
     display: flex;
     justify-content: space-between;
 }
 
-.card .content .details .actionBtn button
-{
+.card .content .details .actionBtn button {
     padding: 10px 30px;
     border-radius: 5px;
     border: none;
@@ -147,9 +128,70 @@ body
     cursor: pointer;
 }
 
-.card .content .details .actionBtn button:nth-child(2)
-{
+.card .content .details .actionBtn button:nth-child(2) {
     border: 1px solid #999;
     color: #999;
     background: #fff;
+}
+
+.box {
+    position: relative;
+    top: -80px;
+    left: 100px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    inset: -10px 50px;
+    background: linear-gradient(315deg, #00ccff, #d400d4);
+    transition: 0.5s;
+    animation: animate 4s linear infinite;
+}
+
+.box:hover::before {
+    inset: -20px 0px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    0% {
+        transform: rotate(360deg);
+    }
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: #162052;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.content1 {
+    position: absolute;
+    inset: 10px;
+    border: 2px solid #070a1c;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.content1 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
 }
